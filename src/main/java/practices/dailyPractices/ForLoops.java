@@ -2,13 +2,13 @@ package practices.dailyPractices;
 
 import java.util.Scanner;
 
-public class Loops {
+public class ForLoops {
     public static void main(String[] args) {
-   /*
+
     // For loop
     //1. Ekrana 10 kez "Java guzeldir" yazin.
 
-        for (int i = 0; i<10; i++){
+       for (int i = 0; i<10; i++){
             System.out.println((i+1)+". Java guzeldir");
         }
 
@@ -40,7 +40,7 @@ public class Loops {
             System.out.println("invalid entry");
         }
 
-  /*      //5. Kullanicidan 100'den kucuk bir tamsayi isteyin. 1'den baslayarak girilen sayiya kadar 3'un veya 5'in kati
+       //5. Kullanicidan 100'den kucuk bir tamsayi isteyin. 1'den baslayarak girilen sayiya kadar 3'un veya 5'in kati
         // sayilari yazdirin.
         System.out.println("please enter an integer number smaller than 100");
         int num = input.nextInt();
@@ -60,7 +60,7 @@ public class Loops {
          - Sayi 5'in kati ise sayi yerine "Guzeldir" yazdirin.
          - Sayi 3'un hem 5'in kati ise yerine "Java Guzeldir" yazdirin.
         */
-/*        System.out.println("Please enter an Integer number, smaller than 100");
+      System.out.println("Please enter an Integer number, smaller than 100");
         int num1 = input.nextInt();
         if (num1<100){
             for (int i = 1; i<=num1; i++){
@@ -95,17 +95,43 @@ public class Loops {
         //9.IQ. Kullanicidan bir String isteyin. Kullanicinin girdigi String'in palindrome olup olmadigini kontrol eden
         // bir program yazin
 
+        System.out.println("please enter a String to check is it Palindrme or not");
+        String palindrome = input.next();
+        String trsPalindrome = "";
+        for (int i = palindrome.length()-1; i>=0; i--){
+            String ch = palindrome.substring(i,i+1 );
+            trsPalindrome = trsPalindrome +ch;
+        } if (palindrome.equals(trsPalindrome)){
+            System.out.println("it is palindrome");
+        } else {
+            System.out.println("it is not palindrome");
+        }
+
         //10. Kullanicidan iki sayi isteyin. Girilen sayilar ve aralarindaki tum tamsayilari toplayip, sonucu yazdiran
         //bir program yaziniz
+
+        System.out.println("please enter first number");
+        int fst = input.nextInt();
+        System.out.println("please enter second number");
+        int snd = input.nextInt();
+        int result = 0;
+        if (fst<snd){
+        for (int i = fst; i<=snd; i++ ){
+            result = result +i;
+        }} else {
+            for (int i = snd; i <= fst; i++) {
+                result = result + i;
+            }}
+            System.out.println(result);
 
         //11. Kullaicidan 10'dan kucuk bir tamsayi isteyin ve girilen sayinin faktoryel'ini bulun (5!=5*4*3*2*1)
         System.out.println("enter an integer smaller than 10 to do factorial operation");
         int factorialNum = input.nextInt();
-        int result = 1;
+        int result2 = 1;
         for (int i = factorialNum; i>=1; i--){
-            result = result*i;
+            result2 = result2*i;
         }
-        System.out.println(result);
+        System.out.println(result2);
 
         //12. Kullanicidan pozitif bir rakam girmesini isteyin ve girilen rakama gore asagidaki sekli cizdirin.
         /*
@@ -113,50 +139,27 @@ public class Loops {
                                     * *
                                     * * *
                                     * * * *
-
-        Scanner input = new Scanner(System.in);
-        System.out.println("please enter a positive number to make star triangle");
+        */
+      System.out.println("please enter a positive number to make star triangle");
         int starTriangle = input.nextInt();
         for (int i = 1; i<=starTriangle; i++){
             for (int j = 0; j<i; j++){
             System.out.print("* ");}
             System.out.println();}
-*/
+
         //13. Kullanicidan poztif bir rakam girmesini isteyin ve girilen rakama gore carpim tablosu olusturun.
         /* ornek, kullanici 3 girerse,
                     1 2 3
                     2 4 6
                     3 4 9
-        */
-/*        Scanner input = new Scanner(System.in);
-        System.out.println("please enter a positive number to make multiply table");
+       */
+
+       System.out.println("please enter a positive number to make multiply table");
         int multiplyTable = input.nextInt();
         for (int i = 1; i<=multiplyTable; i++){
             for (int j = 1; j<=multiplyTable; j++){
                 System.out.print((i*j)+"\t");}
             System.out.println();}
-
-        // While loop
-        //1. While loop kullanarak 3 den 13 e kadar tum tek tamsayilari ekrena yazdiriniz.
-        int i1 = 3;
-        while (i1<=13){
-            if (i1%2!=0){
-                System.out.println(i1);
-            }
-            i1++;
-        }
-   */
-        //2. For loop ve While loop kullanarak 3 bsamakli sayilardan 15, 20 ve 90'na tam bolunebilen sayilari yazdirin.
-        for (int i = 100; i<=999;i++) {
-            while (i%15==0 || i%20==0 || i%90 ==0){
-                System.out.println(i);
-          i++; }
-        }
-
-
-
-
-
 
 
     }//main
