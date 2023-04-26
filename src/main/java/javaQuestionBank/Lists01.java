@@ -6,6 +6,56 @@ import java.util.List;
 
 public class Lists01 {
     public static void main(String[] args) {
+
+        //4) Check if elements are in descending order in a list
+        //Example: (Yellow, Blue, Red, Green) ==> Output: It is not in descending order
+        //(Yellow, Red, Green, Blue) ==> Output: It is in descending order
+
+        List<String> colors = new ArrayList<>();
+        colors.add("Yellow");
+        colors.add("Blue");
+        colors.add("Red");
+        colors.add("Green");
+
+        List<String> newColors = new ArrayList<>();
+        newColors.add("Yellow");
+        newColors.add("Blue");
+        newColors.add("Red");
+        newColors.add("Green");
+        Collections.sort(newColors);
+
+        List<String> newColors1 = new ArrayList<>();
+
+
+        for(int i= newColors.size()-1; i>=0; i--){
+            newColors1.add(newColors.get(i));
+        }
+        if(colors.equals(newColors1)){
+            System.out.println("It is in descending order");
+        } else {
+            System.out.println("It is not in descending order");
+        }
+
+
+
+
+        //5) If the list has 15 as element, change all 15s to 51
+        //Example: (12, 11, 15, 34, 43) ==> Output is (12, 11, 51, 34, 43)
+        List<Integer> a = new ArrayList<>();
+        a.add(12);
+        a.add(11);
+        a.add(15);
+        a.add(34);
+        a.add(43);
+        for (Integer w:a ) {
+            if(w==15){
+                a.set(a.indexOf(w), 51);
+            }
+
+        }
+        System.out.println("a = " + a);
+
+
         //6) If a list has 15 or 13, remove them.
         //Example: (10, 31, 15, 13, 54) ==> Output is (10, 31, 54)
         List<Integer> h = new ArrayList<>();
@@ -14,8 +64,20 @@ public class Lists01 {
         h.add(15);
         h.add(13);
         h.add(54);
-        h.add(13);
 
+
+        for (int i = 0; i<h.size(); i++){
+            if (h.get(i)==15 ){
+                h.remove(i);
+                i--;
+            }
+            if ( h.get(i)==13){
+                h.remove(i);
+                i--;
+            }
+        }
+
+        System.out.println("h = " + h);
 
 
         //7) Find the closest 2 integers in an Integer List
